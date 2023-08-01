@@ -1,0 +1,13 @@
+.element {
+  width: 282px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 362px;
+  justify-self: center;
+  position: relative;
+}
+@media screen and (max-width: 510px) {
+  .element {
+    height: 361px;
+  }
+}

@@ -1,0 +1,29 @@
+.profile__pencil{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: relative;
+}
+
+.profile__pencil::after{
+  content: "";
+  background-image: url("../../../images/pencil.svg");
+  background-size: 26px;
+  background-color: black;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.profile__pencil:hover:after{
+  opacity: 0.8;
+  cursor: pointer;
+}
+

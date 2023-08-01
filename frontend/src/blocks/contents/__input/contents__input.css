@@ -1,0 +1,17 @@
+.contents__input {
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 2px solid #cccccc;
+  width: 358px;
+  min-height: 27px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #cccccc;
+  margin-bottom: 30px;
+  background-color: black;
+}
+.content__input:last-of-type {
+  margin-bottom: 0px;
+}
