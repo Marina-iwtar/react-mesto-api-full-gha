@@ -42,7 +42,8 @@ function App() {
   
   useEffect(() => {
     checkToken();
-  }, [loggedIn]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   function handleUpdateUser(card) {

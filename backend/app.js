@@ -4,17 +4,20 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { errors } = require('celebrate');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const cors = require('cors');
 const { createUsers, login } = require('./controllers/users');
 const ErrorNotFound = require('./errors/ErrorNotFound');
 const { validateLogin, validateCreateUser } = require('./middlewares/validate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 
 const auth = require('./middlewares/auth');
 const middleware = require('./middlewares/middleware');
 
 const app = express();
+app.use(cors());
 app.use(requestLogger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
