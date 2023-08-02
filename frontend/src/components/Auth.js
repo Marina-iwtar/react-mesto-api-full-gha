@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:4000";
+export const BASE_URL = "http://localhost:3000";
 
 function checkResponse(res){
   if (res.ok) {
@@ -33,7 +33,7 @@ export const getContent = (token) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 };

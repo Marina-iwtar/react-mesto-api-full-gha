@@ -31,14 +31,14 @@ function App() {
   const [imageYesNo, setImageYesNo] = useState(false);
 
   useEffect(() => {
-   
+    loggedIn &&
     Promise.all([api.getInitialCards(), api.getUserData()])
       .then(([cards, res]) => {
         setCards(cards);
         setCurrentUser(res);
-      })
+     })
       .catch((err) => console.log(`Ошибка ${err}`));
-  }, []);
+  }, [loggedIn]);
   
   useEffect(() => {
     checkToken();
@@ -75,7 +75,7 @@ function App() {
       .catch((err) => console.log(`Ошибка ${err}`));
   }
 
-  function handleCardLike(card) {
+  /*function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
     // Отправляем запрос в API и получаем обновлённые данные карточки
@@ -98,6 +98,17 @@ function App() {
         )
         .catch((err) => console.log(`Ошибка ${err}`));
     }
+  }*/
+
+  function handleCardLike(card) {
+    const isLiked = card.likes.some((user) => user === currentUser._id);
+    (isLiked ? api.dislikeCard(card._id) : api.likeCard(card._id, true))
+      .then((newCard) => {
+        setCards((state) =>
+          state.map((c) => (c._id === newCard._id ? newCard : c))
+        );
+      })
+      .catch((err) => console.log(err));
   }
 
   function handleCardDelete(card) {
@@ -131,14 +142,14 @@ function App() {
   function checkToken() {
     if (localStorage.getItem("token")) {
       const token = localStorage.getItem("token");
-      Auth.getContent(token)
+       Auth.getContent(token)
         .then((data) => {
           if (!data) {
             return;
           }
           setLoggedIn(true);
           navigate("/");
-          setUserEmail(data.data.email);
+          setUserEmail(data.email);
         })
         .catch(() => {
           setLoggedIn(false);
