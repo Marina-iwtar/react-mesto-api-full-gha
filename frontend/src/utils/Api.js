@@ -90,7 +90,7 @@ export class Api {
   }
 }
 const api = new Api({
-  url: "http://localhost:3001",
+  url: "https://api.iwtar1.nomoreparties.co",
  
 });
 export default api; 

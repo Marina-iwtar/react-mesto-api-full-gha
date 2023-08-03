@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP 84.252.136.5
 
-Frontend https://...
+Frontend https://iwtar.nomoreparties.co
 
-Backend https://...
+Backend https://api.iwtar1.nomoreparties.co
