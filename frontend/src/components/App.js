@@ -84,7 +84,7 @@ function App() {
         .likeCard(card._id)
         .then((newCard) =>
           setCards((state) =>
-            state.map((item) => (item._id === card._id ? newCard : item))
+            state.map((item) => (item === card._id ? newCard : item))
           )
         )
         .catch((err) => console.log(`Ошибка ${err}`));
@@ -99,13 +99,12 @@ function App() {
         .catch((err) => console.log(`Ошибка ${err}`));
     }
   }*/
-
   function handleCardLike(card) {
-    const isLiked = card.likes.some((user) => user === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
     (isLiked ? api.dislikeCard(card._id) : api.likeCard(card._id, true))
       .then((newCard) => {
         setCards((state) =>
-          state.map((c) => (c._id === newCard._id ? newCard : c))
+          state.map((item) => (item._id === newCard._id ? newCard : item))
         );
       })
       .catch((err) => console.log(err));
