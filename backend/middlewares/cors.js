@@ -2,6 +2,8 @@ const allowedCors = [
   'https://iwtar.nomoreparties.co',
   'http://iwtar.nomoreparties.co',
   'https://localhost:3000',
+  'http://localhost:3000',
+  'https://localhost:3001',
   'http://localhost:3001',
 ];
 
