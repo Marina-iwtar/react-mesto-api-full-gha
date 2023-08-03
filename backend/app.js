@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { errors } = require('celebrate');
 // eslint-disable-next-line import/no-extraneous-dependencies
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 const { createUsers, login } = require('./controllers/users');
 const ErrorNotFound = require('./errors/ErrorNotFound');
 const { validateLogin, validateCreateUser } = require('./middlewares/validate');
@@ -17,7 +17,7 @@ const auth = require('./middlewares/auth');
 const middleware = require('./middlewares/middleware');
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors);
 app.use(requestLogger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
