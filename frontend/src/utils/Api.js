@@ -93,4 +93,4 @@ const api = new Api({
   url: "https://api.iwtar1.nomoreparties.co",
  
 });
-export default 
+export default api; 
