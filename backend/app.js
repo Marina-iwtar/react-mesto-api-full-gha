@@ -13,7 +13,7 @@ const ErrorNotFound = require('./errors/ErrorNotFound');
 const { validateLogin, validateCreateUser } = require('./middlewares/validate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const auth = require('./middlewares/auth');
 const middleware = require('./middlewares/middleware');

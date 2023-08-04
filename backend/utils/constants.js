@@ -6,7 +6,7 @@ const UNAUTHORIZED = 401;
 const NOT_FOUND = 404;
 const CONFLICT = 409;
 const INTERNAL_SERVER_ERROR = 500;
-const { JWT_SECRET = 'dev-secret' } = process.env;
+const JWT_SECRET_DEV = 'dev-secret';
 const regexLink = /(?:https?):\/\/(w{3}\.)?\w+([.|-]{1}\w+)*\.[0-9a-zA-Z-]+(\/[\w\-.~:/?#[\]@!$&'()*+,;=]*#?)?/;
 module.exports = {
   OK,
@@ -18,5 +18,5 @@ module.exports = {
   UNAUTHORIZED,
   FORBIDDEN,
   regexLink,
-  JWT_SECRET,
+  JWT_SECRET_DEV,
 };
