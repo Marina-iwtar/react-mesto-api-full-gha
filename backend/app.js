@@ -24,7 +24,11 @@ app.use(requestLogger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
-
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.post('/signup', validateCreateUser, createUsers);
 app.post('/signin', validateLogin, login);
 app.use('/cards', auth, require('./routes/cards'));
