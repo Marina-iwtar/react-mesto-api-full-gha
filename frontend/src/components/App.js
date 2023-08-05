@@ -13,7 +13,7 @@ import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import Auth from "../utils/Auth";
+import {Auth} from "../utils/Auth";
 import InfoTooltip from "./InfoTooltip.js";
 
 function App() {
