@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import * as Auth from "../utils/Auth";
+import Auth from "../utils/Auth";
 import Header from "./Header";
 
 function Login({ handleLogin,  setTitleError, setInfoTooltip, setUserEmail,setImageYesNo }) {
