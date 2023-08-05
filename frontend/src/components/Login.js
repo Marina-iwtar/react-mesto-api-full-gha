@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as Auth from "./Auth";
 import Header from "./Header";
 
-function Login({ handleLogin,  setTitleError, setInfoTooltip, setUserEmail }) {
+function Login({ handleLogin,  setTitleError, setInfoTooltip, setUserEmail,setImageYesNo }) {
   const [loginValue, setLoginValue] = useState({
     email: "",
     password: "",
@@ -29,7 +29,7 @@ function Login({ handleLogin,  setTitleError, setInfoTooltip, setUserEmail }) {
       })
       .catch((err) => {
         setInfoTooltip(true);
-        //setImageYesNo(true);
+        setImageYesNo(false);
         setTitleError("Что-то пошло не так! Попробуйте еще раз.");
         console.log(`Ошибка ${err}`);
       });
