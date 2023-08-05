@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {Auth} from "../utils/Auth";
+import * as Auth from "../../utils/Auth";
 import Header from "./Header";
 
 function Register({ setInfoTooltip, setTitleError, setImageYesNo }) {
